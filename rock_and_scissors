@@ -1,0 +1,71 @@
+
+#Write your code below this line 👇
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+user_action = input("Enter a choice (0 for rock, 1 for paper, 2 for scissors): ")
+possible_actions = ["rock", "paper", "scissors"]
+computer_action = random.randint(0,2)
+action_name = possible_actions[computer_action]
+if int(user_action) == 0:
+  print(rock)
+elif int(user_action) == 1:
+  print(paper)
+elif int(user_action) == 2:
+  print(scissors)
+else: print ("Wrong choice. Game over")
+  
+print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+
+if int(computer_action) == 0:
+  print(rock)
+elif int(computer_action) == 1:
+  print(paper)
+elif int(computer_action) == 2:
+  print(scissors)
+else: print ("Wrong choice. Game over")
+
+
+if int(user_action) == computer_action:
+    print(f"Both players selected {action_name}. It's a tie!")
+elif user_action == "0":
+    if computer_action == 2:
+        print("Rock smashes scissors! You win!")
+    else:
+        print("Paper covers rock! You lose.")
+elif user_action == "1":
+    if computer_action == 0:
+        print("Paper covers rock! You win!")
+    else:
+        print("Scissors cuts paper! You lose.")
+elif user_action == "2":
+    if computer_action == 1:
+        print("Scissors cuts paper! You win!")
+    else:
+        print("Rock smashes scissors! You lose.")
+
